@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- enlazar una hoja de estilo CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+        <!-- enlazar una image -->
+    <img src="{{ url_for('static', filename='img/Rufus_Kim_Possible.png') }}">
+    <h3>Mi plantilla Flask</h3>
+    <p>Frase: {{ frase }}</p>
+    <p>Times: {{ times }}</p>
+        
+    {% for x in range(0,times): %}
+        <p>{{ frase }}</p>
+    {% endfor %}
+        
+    {% if frase == "hola" %}
+        <p>La frase dice hola</p>
+    {% endif %}
+    <!-- enlazar un archivo javascript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
